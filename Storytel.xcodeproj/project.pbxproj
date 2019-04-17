@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D75ABB32266C53600F578FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75ABB22266C53600F578FF /* AppDelegate.swift */; };
+		3D75ABB52266C53600F578FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75ABB42266C53600F578FF /* ViewController.swift */; };
+		3D75ABB82266C53600F578FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D75ABB62266C53600F578FF /* Main.storyboard */; };
+		3D75ABBA2266C53800F578FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D75ABB92266C53800F578FF /* Assets.xcassets */; };
+		3D75ABBD2266C53800F578FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D75ABBB2266C53800F578FF /* LaunchScreen.storyboard */; };
+		3D75ABC82266C53800F578FF /* StorytelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75ABC72266C53800F578FF /* StorytelTests.swift */; };
+		3D75ABD32266C53800F578FF /* StorytelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75ABD22266C53800F578FF /* StorytelUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D75ABC42266C53800F578FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D75ABA72266C53600F578FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D75ABAE2266C53600F578FF;
+			remoteInfo = Storytel;
+		};
+		3D75ABCF2266C53800F578FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D75ABA72266C53600F578FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D75ABAE2266C53600F578FF;
+			remoteInfo = Storytel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3D75ABAF2266C53600F578FF /* Storytel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storytel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D75ABB22266C53600F578FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3D75ABB42266C53600F578FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3D75ABB72266C53600F578FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3D75ABB92266C53800F578FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D75ABBC2266C53800F578FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3D75ABBE2266C53800F578FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D75ABC32266C53800F578FF /* StorytelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StorytelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D75ABC72266C53800F578FF /* StorytelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorytelTests.swift; sourceTree = "<group>"; };
+		3D75ABC92266C53800F578FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D75ABCE2266C53800F578FF /* StorytelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StorytelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D75ABD22266C53800F578FF /* StorytelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorytelUITests.swift; sourceTree = "<group>"; };
+		3D75ABD42266C53800F578FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D75ABAC2266C53600F578FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D75ABC02266C53800F578FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D75ABCB2266C53800F578FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D75ABA62266C53600F578FF = {
+			isa = PBXGroup;
+			children = (
+				3D75ABB12266C53600F578FF /* Storytel */,
+				3D75ABC62266C53800F578FF /* StorytelTests */,
+				3D75ABD12266C53800F578FF /* StorytelUITests */,
+				3D75ABB02266C53600F578FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3D75ABB02266C53600F578FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D75ABAF2266C53600F578FF /* Storytel.app */,
+				3D75ABC32266C53800F578FF /* StorytelTests.xctest */,
+				3D75ABCE2266C53800F578FF /* StorytelUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D75ABB12266C53600F578FF /* Storytel */ = {
+			isa = PBXGroup;
+			children = (
+				3D75ABB22266C53600F578FF /* AppDelegate.swift */,
+				3D75ABB42266C53600F578FF /* ViewController.swift */,
+				3D75ABB62266C53600F578FF /* Main.storyboard */,
+				3D75ABB92266C53800F578FF /* Assets.xcassets */,
+				3D75ABBB2266C53800F578FF /* LaunchScreen.storyboard */,
+				3D75ABBE2266C53800F578FF /* Info.plist */,
+			);
+			path = Storytel;
+			sourceTree = "<group>";
+		};
+		3D75ABC62266C53800F578FF /* StorytelTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D75ABC72266C53800F578FF /* StorytelTests.swift */,
+				3D75ABC92266C53800F578FF /* Info.plist */,
+			);
+			path = StorytelTests;
+			sourceTree = "<group>";
+		};
+		3D75ABD12266C53800F578FF /* StorytelUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3D75ABD22266C53800F578FF /* StorytelUITests.swift */,
+				3D75ABD42266C53800F578FF /* Info.plist */,
+			);
+			path = StorytelUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D75ABAE2266C53600F578FF /* Storytel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D75ABD72266C53800F578FF /* Build configuration list for PBXNativeTarget "Storytel" */;
+			buildPhases = (
+				3D75ABAB2266C53600F578FF /* Sources */,
+				3D75ABAC2266C53600F578FF /* Frameworks */,
+				3D75ABAD2266C53600F578FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Storytel;
+			productName = Storytel;
+			productReference = 3D75ABAF2266C53600F578FF /* Storytel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3D75ABC22266C53800F578FF /* StorytelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D75ABDA2266C53800F578FF /* Build configuration list for PBXNativeTarget "StorytelTests" */;
+			buildPhases = (
+				3D75ABBF2266C53800F578FF /* Sources */,
+				3D75ABC02266C53800F578FF /* Frameworks */,
+				3D75ABC12266C53800F578FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D75ABC52266C53800F578FF /* PBXTargetDependency */,
+			);
+			name = StorytelTests;
+			productName = StorytelTests;
+			productReference = 3D75ABC32266C53800F578FF /* StorytelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3D75ABCD2266C53800F578FF /* StorytelUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D75ABDD2266C53800F578FF /* Build configuration list for PBXNativeTarget "StorytelUITests" */;
+			buildPhases = (
+				3D75ABCA2266C53800F578FF /* Sources */,
+				3D75ABCB2266C53800F578FF /* Frameworks */,
+				3D75ABCC2266C53800F578FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D75ABD02266C53800F578FF /* PBXTargetDependency */,
+			);
+			name = StorytelUITests;
+			productName = StorytelUITests;
+			productReference = 3D75ABCE2266C53800F578FF /* StorytelUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D75ABA72266C53600F578FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = BinaryBoy;
+				TargetAttributes = {
+					3D75ABAE2266C53600F578FF = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					3D75ABC22266C53800F578FF = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 3D75ABAE2266C53600F578FF;
+					};
+					3D75ABCD2266C53800F578FF = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 3D75ABAE2266C53600F578FF;
+					};
+				};
+			};
+			buildConfigurationList = 3D75ABAA2266C53600F578FF /* Build configuration list for PBXProject "Storytel" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D75ABA62266C53600F578FF;
+			productRefGroup = 3D75ABB02266C53600F578FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D75ABAE2266C53600F578FF /* Storytel */,
+				3D75ABC22266C53800F578FF /* StorytelTests */,
+				3D75ABCD2266C53800F578FF /* StorytelUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D75ABAD2266C53600F578FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D75ABBD2266C53800F578FF /* LaunchScreen.storyboard in Resources */,
+				3D75ABBA2266C53800F578FF /* Assets.xcassets in Resources */,
+				3D75ABB82266C53600F578FF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D75ABC12266C53800F578FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D75ABCC2266C53800F578FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D75ABAB2266C53600F578FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D75ABB52266C53600F578FF /* ViewController.swift in Sources */,
+				3D75ABB32266C53600F578FF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D75ABBF2266C53800F578FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D75ABC82266C53800F578FF /* StorytelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D75ABCA2266C53800F578FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D75ABD32266C53800F578FF /* StorytelUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D75ABC52266C53800F578FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D75ABAE2266C53600F578FF /* Storytel */;
+			targetProxy = 3D75ABC42266C53800F578FF /* PBXContainerItemProxy */;
+		};
+		3D75ABD02266C53800F578FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D75ABAE2266C53600F578FF /* Storytel */;
+			targetProxy = 3D75ABCF2266C53800F578FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3D75ABB62266C53600F578FF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D75ABB72266C53600F578FF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3D75ABBB2266C53800F578FF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D75ABBC2266C53800F578FF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3D75ABD52266C53800F578FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3D75ABD62266C53800F578FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3D75ABD82266C53800F578FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7QH458A3QD;
+				INFOPLIST_FILE = Storytel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dimo.hamdy.Storytel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3D75ABD92266C53800F578FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7QH458A3QD;
+				INFOPLIST_FILE = Storytel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dimo.hamdy.Storytel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3D75ABDB2266C53800F578FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7QH458A3QD;
+				INFOPLIST_FILE = StorytelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dimo.hamdy.StorytelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Storytel.app/Storytel";
+			};
+			name = Debug;
+		};
+		3D75ABDC2266C53800F578FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7QH458A3QD;
+				INFOPLIST_FILE = StorytelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dimo.hamdy.StorytelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Storytel.app/Storytel";
+			};
+			name = Release;
+		};
+		3D75ABDE2266C53800F578FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7QH458A3QD;
+				INFOPLIST_FILE = StorytelUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dimo.hamdy.StorytelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Storytel;
+			};
+			name = Debug;
+		};
+		3D75ABDF2266C53800F578FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7QH458A3QD;
+				INFOPLIST_FILE = StorytelUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dimo.hamdy.StorytelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Storytel;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D75ABAA2266C53600F578FF /* Build configuration list for PBXProject "Storytel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D75ABD52266C53800F578FF /* Debug */,
+				3D75ABD62266C53800F578FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D75ABD72266C53800F578FF /* Build configuration list for PBXNativeTarget "Storytel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D75ABD82266C53800F578FF /* Debug */,
+				3D75ABD92266C53800F578FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D75ABDA2266C53800F578FF /* Build configuration list for PBXNativeTarget "StorytelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D75ABDB2266C53800F578FF /* Debug */,
+				3D75ABDC2266C53800F578FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D75ABDD2266C53800F578FF /* Build configuration list for PBXNativeTarget "StorytelUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D75ABDE2266C53800F578FF /* Debug */,
+				3D75ABDF2266C53800F578FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D75ABA72266C53600F578FF /* Project object */;
+}
