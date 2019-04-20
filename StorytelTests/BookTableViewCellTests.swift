@@ -29,12 +29,12 @@ class BookTableViewCellTests: XCTestCase {
     
     func testUIForCell() {
         if let cell = booksListViewController.booksTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? BookTableViewCell {
-            XCTAssertNotNil(cell.bookCoverImageView, "booksTableView added to view")
-            XCTAssertNotNil(cell.bookTitleLabel, "booksTableView added to view")
-            XCTAssertNotNil(cell.authorsLabel, "booksTableView added to view")
-            XCTAssertNotNil(cell.narratorsLabel, "booksTableView added to view")
-            XCTAssertNotNil(cell.cardView, "booksTableView added to view")
-            XCTAssertNotNil(cell.stackView, "booksTableView added to view")
+            XCTAssertNotNil(cell.bookCoverImageView, "bookCoverImageView added to cell")
+            XCTAssertNotNil(cell.bookTitleLabel, "bookTitleLabel added to cell")
+            XCTAssertNotNil(cell.authorsLabel, "authorsLabel added to cell")
+            XCTAssertNotNil(cell.narratorsLabel, "narratorsLabel added to cell")
+            XCTAssertNotNil(cell.cardView, "booksTableView added to cell")
+            XCTAssertNotNil(cell.stackView, "v added to cell")
 
         }
 
