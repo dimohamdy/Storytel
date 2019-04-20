@@ -22,9 +22,13 @@ final class WebBooksRepository: BooksRepository {
         self.networkManager =  networkManager
     }
 
-    func getItems(for query:String,page:Int = 0,completion: @escaping (StorytelResult<Result<Book>>) -> Void ) {
+    func getItems(for query:String,page:Int?,completion: @escaping (StorytelResult<Result<Book>>) -> Void ) {
 
-        guard let url = URL(string: "\(Constant.apiurl.rawValue)\(query)&page=\(page)") else { return }
+        var pageParam = ""
+        if let page = page {
+             pageParam = "&page=\(page)"
+        }
+        guard let url = URL(string: "\(Constant.apiurl.rawValue)\(query)pageParam") else { return }
         print(url.absoluteString)
         networkManager.loadData(from: url) { (result: StorytelResult<Result<Book>>) in
             switch result {

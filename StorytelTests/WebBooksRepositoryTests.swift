@@ -19,7 +19,7 @@ class WebBooksRepositoryTests: XCTestCase {
 
     func testGetItemsFromAPI() {
         // Act: get data from API .
-        webBooksRepository.getItems(for: "Harry") { result in
+        webBooksRepository.getItems(for: "Harry", page: nil) { result in
                 switch result {
                 case .succeed(let data):
                     guard let books = data?.items, books.count > 0 else {

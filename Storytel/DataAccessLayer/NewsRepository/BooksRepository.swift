@@ -8,5 +8,5 @@
 
 import Foundation
 protocol BooksRepository {
-    func getItems(for query:String,page:Int,completion:@escaping (StorytelResult<Result<Book>>) -> Void)
+    func getItems(for query:String,page:Int?,completion:@escaping (StorytelResult<Result<Book>>) -> Void)
 }

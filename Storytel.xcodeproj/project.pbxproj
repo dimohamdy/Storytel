@@ -43,6 +43,7 @@
 		3DC626D7226BD91800B8F67E /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC626D5226BD91800B8F67E /* DataLoader.swift */; };
 		3DC626D8226BD91E00B8F67E /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DC626D4226BD91800B8F67E /* data.json */; };
 		3DC626DC226BD95700B8F67E /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC626DB226BD95700B8F67E /* NetworkMock.swift */; };
+		3DC626DE226BDC8600B8F67E /* ViewControllerMocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC626DD226BDC8600B8F67E /* ViewControllerMocker.swift */; };
 		80DC084E4D13A966DDAE9B15 /* Pods_StorytelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E58BA17957EE99ACE2041A /* Pods_StorytelTests.framework */; };
 		90AFB4BFC9ED256B517B7BEE /* Pods_StorytelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7811864A5067433B5708D56D /* Pods_StorytelUITests.framework */; };
 /* End PBXBuildFile section */
@@ -106,6 +107,7 @@
 		3DC626D4226BD91800B8F67E /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		3DC626D5226BD91800B8F67E /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		3DC626DB226BD95700B8F67E /* NetworkMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMock.swift; sourceTree = "<group>"; };
+		3DC626DD226BDC8600B8F67E /* ViewControllerMocker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerMocker.swift; sourceTree = "<group>"; };
 		4120AF31A995AC098E1FA87C /* Pods-StorytelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorytelTests.release.xcconfig"; path = "Target Support Files/Pods-StorytelTests/Pods-StorytelTests.release.xcconfig"; sourceTree = "<group>"; };
 		707E242D65EE1043A69E32C2 /* Pods-StorytelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorytelTests.debug.xcconfig"; path = "Target Support Files/Pods-StorytelTests/Pods-StorytelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		774EEAB8A159F466F432883F /* Pods-StorytelUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorytelUITests.debug.xcconfig"; path = "Target Support Files/Pods-StorytelUITests/Pods-StorytelUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 		3DC626DA226BD95700B8F67E /* Mocker */ = {
 			isa = PBXGroup;
 			children = (
+				3DC626DD226BDC8600B8F67E /* ViewControllerMocker.swift */,
 				3DC626DB226BD95700B8F67E /* NetworkMock.swift */,
 			);
 			path = Mocker;
@@ -583,6 +586,7 @@
 				3D75AC212266C8F500F578FF /* ViewModelTests.swift in Sources */,
 				3DC626D7226BD91800B8F67E /* DataLoader.swift in Sources */,
 				3D75AC242266C8F500F578FF /* NetworkTests.swift in Sources */,
+				3DC626DE226BDC8600B8F67E /* ViewControllerMocker.swift in Sources */,
 				3D75AC222266C8F500F578FF /* WebBooksRepositoryTests.swift in Sources */,
 				3DC626DC226BD95700B8F67E /* NetworkMock.swift in Sources */,
 			);
