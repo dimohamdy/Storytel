@@ -7,31 +7,28 @@
 //
 
 import UIKit
+import Kingfisher
 
 extension UIImageView {
-    private func downloaded(from url: URL, placeHolder: UIImage = #imageLiteral(resourceName: "default-og-image"), contentMode mode: UIView.ContentMode = .scaleAspectFit) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else {
-                    DispatchQueue.main.async {
-                        self.image = placeHolder
-                    }
-                    return
-            }
-            DispatchQueue.main.async {
-                self.image = image
-            }
-
-            }.resume()
-    }
-
     func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
         guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
+        self.kf.indicatorType = .activity
+        self.kf.setImage(
+            with: url,
+            placeholder: #imageLiteral(resourceName: "default-og-image"),
+            options: [
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
+        {
+            result in
+            switch result {
+            case .success(let value):
+                print("Task done for: \(value.source.url?.absoluteString ?? "")")
+            case .failure(let error):
+                print("Job failed: \(error.localizedDescription)")
+            }
+        }
+        
     }
 }
