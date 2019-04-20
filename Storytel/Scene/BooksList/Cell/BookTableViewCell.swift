@@ -11,12 +11,12 @@ import SnapKit
 
 class BookTableViewCell: UITableViewCell, CellReusable {
     
-    private var bookCoverImageView: UIImageView!
-    private var bookTitleLabel: UILabel!
-    private var authorsLabel: UILabel!
-    private var narratorsLabel: UILabel!
-    private var cardView: UIView!
-    private var stackView: UIStackView!
+     var bookCoverImageView: UIImageView!
+     var bookTitleLabel: UILabel!
+     var authorsLabel: UILabel!
+     var narratorsLabel: UILabel!
+     var cardView: UIView!
+     var stackView: UIStackView!
     
     
     var book: Book? = nil {

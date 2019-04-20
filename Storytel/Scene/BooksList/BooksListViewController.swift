@@ -13,7 +13,7 @@ class BooksListViewController: UIViewController {
     var viewModel: BooksListViewModel!
     
     var tableViewDataSource: TableViewDataSource!
-    private var booksTableView: UITableView!
+    var booksTableView: UITableView!
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,7 +28,6 @@ class BooksListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.refreshData()
         viewModel.delegate = self
         setupViews()
         setupLayout()
@@ -38,18 +37,16 @@ class BooksListViewController: UIViewController {
 }
 
 extension  BooksListViewController: ViewModelDelegate {
-    func showLoading(index:IndexPath) {
+    func showLoading() {
         DispatchQueue.main.async {
             self.booksTableView.tableFooterView = LoadingTableViewCell()
             self.booksTableView.tableFooterView?.isHidden = false
         }
     }
     
-    func hideLoading(index:IndexPath) {
+    func hideLoading() {
         DispatchQueue.main.async {
-            
             self.booksTableView.tableFooterView = nil
-            
         }
     }
     

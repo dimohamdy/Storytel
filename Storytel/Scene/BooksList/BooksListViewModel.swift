@@ -17,13 +17,13 @@ enum ItemTableViewCellType {
 }
 protocol ViewModelDelegate: class {
     func updateData(itemsForTable: [ItemTableViewCellType])
-    func showLoading(index: IndexPath)
-    func hideLoading(index: IndexPath)
+    func showLoading()
+    func hideLoading()
 }
 class BooksListViewModel {
     
     // input
-    var newsRepository: BooksRepository!
+    var booksRepository: BooksRepository!
     // output
     weak var delegate: ViewModelDelegate? {
         didSet {
@@ -42,30 +42,29 @@ class BooksListViewModel {
     // internal
     var itemsForTable: [ItemTableViewCellType] = [ItemTableViewCellType]()
     
-    var loadingIndexPath:IndexPath {
-        return IndexPath(row: self.itemsForTable.count, section: 0)
+    
+    init(query:String,booksRepository: BooksRepository = WebBooksRepository()) {
+        self.booksRepository = booksRepository
+        self.query = query
+        refreshData()
     }
     
-    init(query:String,newsRepository: BooksRepository = WebBooksRepository()) {
-        self.newsRepository = newsRepository
-        self.query = query
-    }
-    func refreshData() {
+    private func refreshData() {
         self.itemsForTable.append(.header(headerTitle: query))
-        getData(newsRepository: self.newsRepository, for: query)
+        getData(booksRepository: self.booksRepository, for: query)
     }
     
     func loadMoreData(_ index: IndexPath) {
         print(index.item)
             itemsForTable.append(.loading)
-            delegate?.showLoading(index: loadingIndexPath)
-            getData(newsRepository: self.newsRepository, for: self.query)
+            delegate?.showLoading()
+            getData(booksRepository: self.booksRepository, for: self.query)
     }
     
     private func getData(for query:String = "harry") {
         self.itemsForTable = []
         page = 1
-        getData(newsRepository: self.newsRepository, for: query.lowercased())
+        getData(booksRepository: self.booksRepository, for: query.lowercased())
     }
     
 }
@@ -75,17 +74,17 @@ class BooksListViewModel {
 extension BooksListViewModel {
     
     
-    private func getData(newsRepository: BooksRepository,for query:String) {
-        self.newsRepository = newsRepository
+    private func getData(booksRepository: BooksRepository,for query:String) {
+        self.booksRepository = booksRepository
         self.query = query
 
-        guard (newsRepository is WebBooksRepository && Reachability.isConnectedToNetwork() == true) else {
+        guard (booksRepository is WebBooksRepository && Reachability.isConnectedToNetwork() == true) else {
             self.itemsForTable = [.error(message: StorytelError.noInternetConnection.localizedDescription)]
             self.delegate?.updateData(itemsForTable: itemsForTable)
             return
         }
         
-        newsRepository.getItems(for: query, page: page) { [weak self] result in
+        booksRepository.getItems(for: query, page: page) { [weak self] result in
             guard let self =  self else{
                 return
             }
@@ -104,7 +103,7 @@ extension BooksListViewModel {
                     switch lastItem {
                     case .loading:
                         self.itemsForTable.removeLast()
-                        self.delegate?.hideLoading(index: self.loadingIndexPath)
+                        self.delegate?.hideLoading()
                     default:
                         break
                     }

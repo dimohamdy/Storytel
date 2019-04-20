@@ -23,7 +23,6 @@
 		3D75ABB32266C53600F578FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75ABB22266C53600F578FF /* AppDelegate.swift */; };
 		3D75ABBA2266C53800F578FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D75ABB92266C53800F578FF /* Assets.xcassets */; };
 		3D75ABBD2266C53800F578FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D75ABBB2266C53800F578FF /* LaunchScreen.storyboard */; };
-		3D75ABC82266C53800F578FF /* StorytelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75ABC72266C53800F578FF /* StorytelTests.swift */; };
 		3D75ABD32266C53800F578FF /* StorytelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75ABD22266C53800F578FF /* StorytelUITests.swift */; };
 		3D75ABEB2266C6D000F578FF /* UITableViewCell+EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75ABE12266C6CF00F578FF /* UITableViewCell+EmptyCell.swift */; };
 		3D75ABEC2266C6D000F578FF /* ReusableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75ABE22266C6CF00F578FF /* ReusableCellView.swift */; };
@@ -36,12 +35,14 @@
 		3D75ABFC2266C6E800F578FF /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75ABF92266C6E800F578FF /* NetworkSession.swift */; };
 		3D75AC212266C8F500F578FF /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75AC1A2266C8F500F578FF /* ViewModelTests.swift */; };
 		3D75AC222266C8F500F578FF /* WebBooksRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75AC1B2266C8F500F578FF /* WebBooksRepositoryTests.swift */; };
-		3D75AC232266C8F500F578FF /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75AC1C2266C8F500F578FF /* DataLoader.swift */; };
 		3D75AC242266C8F500F578FF /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75AC1D2266C8F500F578FF /* NetworkTests.swift */; };
-		3D75AC252266C8F500F578FF /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75AC1E2266C8F500F578FF /* NetworkMock.swift */; };
-		3D75AC262266C8F500F578FF /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D75AC1F2266C8F500F578FF /* data.json */; };
-		3D75AC272266C8F500F578FF /* ArticleListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75AC202266C8F500F578FF /* ArticleListViewControllerTests.swift */; };
+		3D75AC272266C8F500F578FF /* BooksListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75AC202266C8F500F578FF /* BooksListViewControllerTests.swift */; };
 		3DC626CC226AB12A00B8F67E /* ViewBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC626CB226AB12A00B8F67E /* ViewBorder.swift */; };
+		3DC626CF226B7B7A00B8F67E /* BookTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC626CE226B7B7A00B8F67E /* BookTableViewCellTests.swift */; };
+		3DC626D6226BD91800B8F67E /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DC626D4226BD91800B8F67E /* data.json */; };
+		3DC626D7226BD91800B8F67E /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC626D5226BD91800B8F67E /* DataLoader.swift */; };
+		3DC626D8226BD91E00B8F67E /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DC626D4226BD91800B8F67E /* data.json */; };
+		3DC626DC226BD95700B8F67E /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC626DB226BD95700B8F67E /* NetworkMock.swift */; };
 		80DC084E4D13A966DDAE9B15 /* Pods_StorytelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E58BA17957EE99ACE2041A /* Pods_StorytelTests.framework */; };
 		90AFB4BFC9ED256B517B7BEE /* Pods_StorytelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7811864A5067433B5708D56D /* Pods_StorytelUITests.framework */; };
 /* End PBXBuildFile section */
@@ -83,7 +84,6 @@
 		3D75ABBC2266C53800F578FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D75ABBE2266C53800F578FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D75ABC32266C53800F578FF /* StorytelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StorytelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D75ABC72266C53800F578FF /* StorytelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorytelTests.swift; sourceTree = "<group>"; };
 		3D75ABC92266C53800F578FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D75ABCE2266C53800F578FF /* StorytelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StorytelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D75ABD22266C53800F578FF /* StorytelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorytelUITests.swift; sourceTree = "<group>"; };
@@ -99,12 +99,13 @@
 		3D75ABF92266C6E800F578FF /* NetworkSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		3D75AC1A2266C8F500F578FF /* ViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		3D75AC1B2266C8F500F578FF /* WebBooksRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBooksRepositoryTests.swift; sourceTree = "<group>"; };
-		3D75AC1C2266C8F500F578FF /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		3D75AC1D2266C8F500F578FF /* NetworkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
-		3D75AC1E2266C8F500F578FF /* NetworkMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMock.swift; sourceTree = "<group>"; };
-		3D75AC1F2266C8F500F578FF /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
-		3D75AC202266C8F500F578FF /* ArticleListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewControllerTests.swift; sourceTree = "<group>"; };
+		3D75AC202266C8F500F578FF /* BooksListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksListViewControllerTests.swift; sourceTree = "<group>"; };
 		3DC626CB226AB12A00B8F67E /* ViewBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBorder.swift; sourceTree = "<group>"; };
+		3DC626CE226B7B7A00B8F67E /* BookTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCellTests.swift; sourceTree = "<group>"; };
+		3DC626D4226BD91800B8F67E /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		3DC626D5226BD91800B8F67E /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		3DC626DB226BD95700B8F67E /* NetworkMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMock.swift; sourceTree = "<group>"; };
 		4120AF31A995AC098E1FA87C /* Pods-StorytelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorytelTests.release.xcconfig"; path = "Target Support Files/Pods-StorytelTests/Pods-StorytelTests.release.xcconfig"; sourceTree = "<group>"; };
 		707E242D65EE1043A69E32C2 /* Pods-StorytelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorytelTests.debug.xcconfig"; path = "Target Support Files/Pods-StorytelTests/Pods-StorytelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		774EEAB8A159F466F432883F /* Pods-StorytelUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorytelUITests.debug.xcconfig"; path = "Target Support Files/Pods-StorytelUITests/Pods-StorytelUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -227,14 +228,13 @@
 		3D75ABC62266C53800F578FF /* StorytelTests */ = {
 			isa = PBXGroup;
 			children = (
-				3D75AC202266C8F500F578FF /* ArticleListViewControllerTests.swift */,
-				3D75AC1F2266C8F500F578FF /* data.json */,
-				3D75AC1C2266C8F500F578FF /* DataLoader.swift */,
-				3D75AC1E2266C8F500F578FF /* NetworkMock.swift */,
+				3DC626DA226BD95700B8F67E /* Mocker */,
+				3DC626D3226BD91800B8F67E /* DataLoader */,
+				3D75AC202266C8F500F578FF /* BooksListViewControllerTests.swift */,
 				3D75AC1D2266C8F500F578FF /* NetworkTests.swift */,
 				3D75AC1A2266C8F500F578FF /* ViewModelTests.swift */,
+				3DC626CE226B7B7A00B8F67E /* BookTableViewCellTests.swift */,
 				3D75AC1B2266C8F500F578FF /* WebBooksRepositoryTests.swift */,
-				3D75ABC72266C53800F578FF /* StorytelTests.swift */,
 				3D75ABC92266C53800F578FF /* Info.plist */,
 			);
 			path = StorytelTests;
@@ -287,6 +287,23 @@
 				3D67EE7E2268B47B0049B009 /* BooksList */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		3DC626D3226BD91800B8F67E /* DataLoader */ = {
+			isa = PBXGroup;
+			children = (
+				3DC626D4226BD91800B8F67E /* data.json */,
+				3DC626D5226BD91800B8F67E /* DataLoader.swift */,
+			);
+			path = DataLoader;
+			sourceTree = "<group>";
+		};
+		3DC626DA226BD95700B8F67E /* Mocker */ = {
+			isa = PBXGroup;
+			children = (
+				3DC626DB226BD95700B8F67E /* NetworkMock.swift */,
+			);
+			path = Mocker;
 			sourceTree = "<group>";
 		};
 		95C8FC051963DD0BC2E727AE /* Pods */ = {
@@ -411,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D75ABBD2266C53800F578FF /* LaunchScreen.storyboard in Resources */,
+				3DC626D8226BD91E00B8F67E /* data.json in Resources */,
 				3D75ABBA2266C53800F578FF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,7 +437,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D75AC262266C8F500F578FF /* data.json in Resources */,
+				3DC626D6226BD91800B8F67E /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,12 +526,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Storytel/Pods-Storytel-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,13 +578,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D75AC272266C8F500F578FF /* ArticleListViewControllerTests.swift in Sources */,
-				3D75AC232266C8F500F578FF /* DataLoader.swift in Sources */,
+				3D75AC272266C8F500F578FF /* BooksListViewControllerTests.swift in Sources */,
+				3DC626CF226B7B7A00B8F67E /* BookTableViewCellTests.swift in Sources */,
 				3D75AC212266C8F500F578FF /* ViewModelTests.swift in Sources */,
-				3D75AC252266C8F500F578FF /* NetworkMock.swift in Sources */,
+				3DC626D7226BD91800B8F67E /* DataLoader.swift in Sources */,
 				3D75AC242266C8F500F578FF /* NetworkTests.swift in Sources */,
-				3D75ABC82266C53800F578FF /* StorytelTests.swift in Sources */,
 				3D75AC222266C8F500F578FF /* WebBooksRepositoryTests.swift in Sources */,
+				3DC626DC226BD95700B8F67E /* NetworkMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
