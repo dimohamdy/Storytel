@@ -89,9 +89,9 @@ extension BooksListViewModel {
                 return
             }
             switch result {
-            case .succeed(let searchResult):
+            case .success(let searchResult):
 
-                guard  let books = searchResult?.items, books.count > 0,let nextPage = Int(searchResult?.nextPage ?? "0") else {
+                guard  let books = searchResult.items, books.count > 0,let nextPage = Int(searchResult.nextPage ?? "0") else {
                     self.itemsForTable.append(.empty)
                     self.delegate?.updateData(itemsForTable: self.itemsForTable )
                     return
@@ -113,8 +113,8 @@ extension BooksListViewModel {
                 self.itemsForTable.append(contentsOf: newItems)
                 self.delegate?.updateData(itemsForTable: self.itemsForTable )
                 
-            case .failed(let error):
-                self.itemsForTable = [.error(message: error?.localizedDescription ?? StorytelError.unknownError.localizedDescription)]
+            case .failure(let error):
+                self.itemsForTable = [.error(message: error.localizedDescription)]
                 self.delegate?.updateData(itemsForTable: self.itemsForTable )
             }
         }

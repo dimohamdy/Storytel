@@ -30,7 +30,7 @@ class NetworkManager {
         self.session = session
     }
     func loadData<T: Decodable>(from url: URL,
-                                completion: @escaping (StorytelResult<T>) -> Void) {
+                                completion: @escaping (Result<T,StorytelError>) -> Void) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
         session.loadData(from: url) { data, _ in
@@ -40,18 +40,18 @@ class NetworkManager {
             do {
                 
                 guard let data = data else {
-                    completion(.failed(StorytelError.noResults))
+                    completion(.failure(.noResults))
                     return
                 }
                 // Parse JSON data
 
                 let decoder = JSONDecoder()
                 let result = try decoder.decode(T.self, from: data)
-                completion(.succeed(result))
+                completion(.success(result))
 
             } catch let err {
                 print("Err", err)
-                completion(.failed(err as? StorytelError))
+                completion(.failure(.unknownError))
 
             }
 

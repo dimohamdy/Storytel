@@ -22,33 +22,26 @@ final class WebBooksRepository: BooksRepository {
         self.networkManager =  networkManager
     }
 
-    func getItems(for query:String,page:Int?,completion: @escaping (StorytelResult<Result<Book>>) -> Void ) {
+    func getItems(for query:String,page:Int?,completion: @escaping (Result<Feed<Book>,StorytelError>) -> Void ) {
 
         var pageParam = ""
         if let page = page {
              pageParam = "&page=\(page)"
         }
-        guard let url = URL(string: "\(Constant.apiurl.rawValue)\(query)pageParam") else { return }
+        guard let url = URL(string: "\(Constant.apiurl.rawValue)\(query)\(pageParam)") else { return }
         print(url.absoluteString)
-        networkManager.loadData(from: url) { (result: StorytelResult<Result<Book>>) in
+        networkManager.loadData(from: url) { (result: Result<Feed<Book>,StorytelError>) in
             switch result {
-            case .succeed(let data):
-                guard let data = data else {
-                    completion(.failed(.noResults))
-                    return
-                }
-                completion(.succeed(data))
-            default:
-                completion(.failed(StorytelError.unknownError))
+            case .success(let data):
+                completion(.success(data))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
 
     }
 }
 
-enum StorytelResult<T> {
-    case succeed(T?), failed(StorytelError?)
-}
 
 enum StorytelError: Error {
     case failedConnection

@@ -1,5 +1,5 @@
 //
-//	Result.swift
+//	Feed.swift
 //
 //	Create by BinaryBoy on 18/4/2019
 //	Copyright © 2019. All rights reserved.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Result<T: Decodable>: Decodable {
+struct Feed<T: Decodable>: Decodable {
 
 	let items : [T]?
 	let nextPage : String?

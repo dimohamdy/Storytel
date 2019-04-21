@@ -21,10 +21,10 @@ class NetworkTests: XCTestCase {
         // Create a URL (using the file path API to avoid optionals)
         let url = URL(fileURLWithPath: "url")
         // Perform the request and verify the result
-        manager.loadData(from: url) { (result: StorytelResult<Result<Book>>) in
+        manager.loadData(from: url) { (result: Result<Feed<Book>>) in
             
             switch result {
-            case .succeed(let data):
+            case .success(let data):
                 guard let data = data,let books = data.items else {
                     XCTFail("Can't get Data")
                     return

@@ -56,6 +56,8 @@ class TableViewDataSource: NSObject, UITableViewDelegate, UITableViewDataSource 
         switch item {
         case .cellItem:
             return 120
+        case .header:
+            return 100
         case .error, .empty:
             return tableView.frame.size.height
         default:
@@ -63,10 +65,6 @@ class TableViewDataSource: NSObject, UITableViewDelegate, UITableViewDataSource 
             
         }
         
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100.0
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
