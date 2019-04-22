@@ -15,7 +15,7 @@ extension UIImageView {
         self.kf.indicatorType = .activity
         self.kf.setImage(
             with: url,
-            placeholder: #imageLiteral(resourceName: "default-og-image"),
+            placeholder: #imageLiteral(resourceName: "placeholder"),
             options: [
                 .transition(.fade(1)),
                 .cacheOriginalImage

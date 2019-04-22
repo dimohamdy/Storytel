@@ -70,7 +70,7 @@ class BookTableViewCell: UITableViewCell, CellReusable {
         
         
         
-        bookCoverImageView = UIImageView(image: #imageLiteral(resourceName: "default-og-image"))
+        bookCoverImageView = UIImageView(image: #imageLiteral(resourceName: "placeholder"))
         cardView.addSubview(bookCoverImageView)
         bookCoverImageView.roundCorners(corners: [.allCorners], radius: 5.0)
         
