@@ -27,6 +27,7 @@ struct Book : Codable {
 		case publishers = "publishers"
 		case title = "title"
 	}
+    
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		authors = try values.decodeIfPresent([Author].self, forKey: .authors)

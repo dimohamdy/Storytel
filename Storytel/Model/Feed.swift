@@ -22,6 +22,7 @@ struct Feed<T: Decodable>: Decodable {
 		case query = "query"
 		case totalCount = "totalCount"
 	}
+    
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		items = try values.decodeIfPresent([T].self, forKey: .items)

@@ -19,6 +19,7 @@ struct Cover : Codable {
 		case url = "url"
 		case width = "width"
 	}
+    
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		height = try values.decodeIfPresent(Int.self, forKey: .height)
