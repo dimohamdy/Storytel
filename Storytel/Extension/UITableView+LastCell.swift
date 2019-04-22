@@ -1,5 +1,5 @@
 //
-//  UITableView+Extention.swift
+//  UITableView+LastCell.swift
 //  Storytel
 //
 //  Created by BinaryBoy on 4/19/19.
