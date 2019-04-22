@@ -37,24 +37,24 @@ class BookTableViewCell: UITableViewCell, CellReusable {
             bookTitleLabel.text = book.title
             
             if let authors = book.authors,!authors.isEmpty  {
-                let  authorsNames = authors.map { author -> String in
-                    return author.name ?? ""
-                }
                 
-                let authorsString = authorsNames.joined(separator: ", ")
+                let  authorsString = authors.map { author -> String in
+                    return author.name ?? ""
+                }.joined(separator: ", ")
+                
                 authorsLabel.text = "By \(authorsString)"
             }
             
             
             if let narrators = book.narrators,!narrators.isEmpty {
                 
-                let  narratorsNames = narrators.map { narrator -> String in
+                let  narratorsString = narrators.map { narrator -> String in
                     return narrator.name ?? ""
-                }
+                }.joined(separator: ", ")
                 
-                let narratorsString = narratorsNames.joined(separator: ", ")
                 narratorsLabel.text = "with \(narratorsString)"
             }
+            
             if let pathToImage = book.cover?.url {
                 bookCoverImageView.download(from: pathToImage, contentMode: .scaleAspectFill)
             }
