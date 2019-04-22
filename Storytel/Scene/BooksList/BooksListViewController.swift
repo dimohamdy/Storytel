@@ -12,7 +12,7 @@ class BooksListViewController: UIViewController {
     
     var viewModel: BooksListViewModel!
     
-    var tableViewDataSource: TableViewDataSource!
+    var tableViewDataSource: BooksTableViewDataSource!
     var booksTableView: UITableView!
     
     
@@ -53,7 +53,7 @@ extension  BooksListViewController: ViewModelDelegate {
     func updateData(itemsForTable: [ItemTableViewCellType]) {
         
         if tableViewDataSource == nil {
-            tableViewDataSource = TableViewDataSource(viewModel: self.viewModel, itemsForTable: itemsForTable)
+            tableViewDataSource = BooksTableViewDataSource(viewModel: self.viewModel, itemsForTable: itemsForTable)
         } else {
             tableViewDataSource.itemsForTable = itemsForTable
         }

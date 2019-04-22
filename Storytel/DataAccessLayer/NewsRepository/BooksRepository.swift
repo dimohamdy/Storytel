@@ -7,6 +7,8 @@
 //
 
 import Foundation
+
 protocol BooksRepository {
-    func getItems(for query:String,page:Int?,completion:@escaping (Result<Feed<Book>,StorytelError>) -> Void)
+    
+    func books(for query: String, page: Int?, completion: @escaping (Result<Feed<Book>, StorytelError>) -> Void)
 }

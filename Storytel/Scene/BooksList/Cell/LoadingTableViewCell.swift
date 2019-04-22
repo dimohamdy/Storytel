@@ -23,10 +23,10 @@ class LoadingTableViewCell: UITableViewCell, CellReusable {
         activityIndicator.startAnimating()
         addSubview(activityIndicator)
         
-        setupConstrain()
+        setupConstraints()
     }
     
-    private func setupConstrain(){
+    private func setupConstraints(){
         activityIndicator.snp.makeConstraints { (make) -> Void in
             make.centerY.equalTo(self)
             make.centerX.equalTo(self)
@@ -37,6 +37,5 @@ class LoadingTableViewCell: UITableViewCell, CellReusable {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 
 }

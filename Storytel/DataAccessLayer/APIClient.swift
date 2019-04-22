@@ -1,5 +1,5 @@
 //
-//  NetworkSession.swift
+//  APIClient.swift
 //  Storytel
 //
 //  Created by BinaryBoy on 4/18/19.
@@ -24,7 +24,7 @@ extension URLSession: NetworkSession {
     }
 }
 
-class NetworkManager {
+class APIClient {
     private let session: NetworkSession
     init(session: NetworkSession = URLSession.shared) {
         self.session = session
@@ -43,15 +43,14 @@ class NetworkManager {
                     completion(.failure(.noResults))
                     return
                 }
-                // Parse JSON data
 
                 let decoder = JSONDecoder()
                 let result = try decoder.decode(T.self, from: data)
                 completion(.success(result))
 
-            } catch let err {
-                print("Err", err)
-                completion(.failure(.unknownError))
+            } catch let error {
+                print("Error: ", error)
+                completion(.failure(.runtimeError(error.localizedDescription)))
 
             }
 

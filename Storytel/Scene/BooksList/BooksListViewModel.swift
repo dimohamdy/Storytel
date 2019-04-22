@@ -37,7 +37,7 @@ class BooksListViewModel {
     
     var query: String!
     
-    fileprivate var page = 1
+    fileprivate var page:Int?
     fileprivate var canLoadMore = true
     // internal
     var itemsForTable: [ItemTableViewCellType] = [ItemTableViewCellType]()
@@ -55,7 +55,7 @@ class BooksListViewModel {
     }
     
     func loadMoreData(_ index: IndexPath) {
-        print(index.item)
+            print(index.item)
             itemsForTable.append(.loading)
             delegate?.showLoading()
             getData(booksRepository: self.booksRepository, for: self.query)
@@ -63,7 +63,7 @@ class BooksListViewModel {
     
     private func getData(for query:String = "harry") {
         self.itemsForTable = []
-        page = 1
+        page = nil
         getData(booksRepository: self.booksRepository, for: query.lowercased())
     }
     
@@ -84,7 +84,7 @@ extension BooksListViewModel {
             return
         }
         
-        booksRepository.getItems(for: query, page: page) { [weak self] result in
+        booksRepository.books(for: query, page: page) { [weak self] result in
             guard let self =  self else{
                 return
             }

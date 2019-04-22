@@ -18,11 +18,11 @@ class ViewModelTests: XCTestCase {
         // Arrange: Mock Data from API
 
         let session = URLSessionMock()
-        let manager = NetworkManager(session: session)
+        let manager = APIClient(session: session)
         // Create data and tell the session to always return it
         session.data = getData()
 
-        let webBooksRepository: WebBooksRepository = WebBooksRepository(networkManager: manager)
+        let webBooksRepository: WebBooksRepository = WebBooksRepository(client: manager)
         // Arrange: setup ViewModel
         // Act: get data from API .
         viewModel = BooksListViewModel(query: "Harry", booksRepository: webBooksRepository)
@@ -41,11 +41,11 @@ class ViewModelTests: XCTestCase {
         // Arrange: Mock Data from API
 
         let session = URLSessionMock()
-        let manager = NetworkManager(session: session)
+        let manager = APIClient(session: session)
         // Create data and tell the session to always return it
         session.data = nil
 
-        let webBooksRepository: WebBooksRepository = WebBooksRepository(networkManager: manager)
+        let webBooksRepository: WebBooksRepository = WebBooksRepository(client: manager)
         // Arrange: setup ViewModel
         // Act: get data from API .
         viewModel = BooksListViewModel(query: "Harry", booksRepository: webBooksRepository)
@@ -73,11 +73,11 @@ class ViewModelTests: XCTestCase {
         // Arrange: Mock Data from API
         
         let session = URLSessionMock()
-        let manager = NetworkManager(session: session)
+        let manager = APIClient(session: session)
         // Create data and tell the session to always return it
         session.data = getData()
 
-        let webBooksRepository: WebBooksRepository = WebBooksRepository(networkManager: manager)
+        let webBooksRepository: WebBooksRepository = WebBooksRepository(client: manager)
         // Arrange: setup ViewModel
         // Act: get data from API .
         viewModel = BooksListViewModel(query: "Harry", booksRepository: webBooksRepository)

@@ -30,10 +30,10 @@ extension BooksListViewController {
     
     static func getViewModelWithMockData() -> BooksListViewModel {
         let session = URLSessionMock()
-        let manager = NetworkManager(session: session)
+        let manager = APIClient(session: session)
         // Create data and tell the session to always return it
         session.data = getData()
-        let webBooksRepository: WebBooksRepository = WebBooksRepository(networkManager: manager)
+        let webBooksRepository: WebBooksRepository = WebBooksRepository(client: manager)
         return BooksListViewModel(query: "Harry", booksRepository: webBooksRepository)
     }
 }

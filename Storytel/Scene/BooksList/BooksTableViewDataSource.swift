@@ -1,5 +1,5 @@
 //
-//  TableViewDataSource.swift
+//  BooksTableViewDataSource.swift
 //  Storytel
 //
 //  Created by BinaryBoy on 4/3/19.
@@ -8,9 +8,15 @@
 
 import UIKit
 
-class TableViewDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
+class BooksTableViewDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     var itemsForTable: [ItemTableViewCellType]!
     var viewModel:BooksListViewModel!
+    
+    struct Constant {
+        static let heightOfBookCell: CGFloat = 120
+        static let heightOfHeaderCell: CGFloat = 100
+
+    }
     
     init(viewModel:BooksListViewModel,itemsForTable: [ItemTableViewCellType]) {
         self.itemsForTable = itemsForTable
@@ -24,7 +30,7 @@ class TableViewDataSource: NSObject, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemsForTable.count - 1
+        return itemsForTable.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,9 +49,9 @@ class TableViewDataSource: NSObject, UITableViewDelegate, UITableViewDataSource 
             }
             return UITableViewCell()
         case .error(let message):
-            return UITableViewCell.getEmptyCell(message: message)
+            return UITableViewCell.emptyCell(message: message)
         case .empty:
-            return UITableViewCell.getEmptyCell(message: "No data available")
+            return UITableViewCell.emptyCell(message: "No books found")
         default:
             return UITableViewCell()
         }
@@ -55,9 +61,9 @@ class TableViewDataSource: NSObject, UITableViewDelegate, UITableViewDataSource 
         let item = itemsForTable[indexPath.row]
         switch item {
         case .cellItem:
-            return 120
+            return Constant.heightOfBookCell
         case .header:
-            return 100
+            return Constant.heightOfHeaderCell
         case .error, .empty:
             return tableView.frame.size.height
         default:

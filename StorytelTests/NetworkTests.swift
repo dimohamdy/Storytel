@@ -15,7 +15,7 @@ class NetworkTests: XCTestCase {
     func testGetItems() {
         // Setup our objects
         let session = URLSessionMock()
-        let manager = NetworkManager(session: session)
+        let manager = APIClient(session: session)
         // Create data and tell the session to always return it
         session.data = getData()
         // Create a URL (using the file path API to avoid optionals)

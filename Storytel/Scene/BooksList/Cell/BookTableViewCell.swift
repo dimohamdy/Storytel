@@ -11,13 +11,22 @@ import SnapKit
 
 class BookTableViewCell: UITableViewCell, CellReusable {
     
-     var bookCoverImageView: UIImageView!
-     var bookTitleLabel: UILabel!
-     var authorsLabel: UILabel!
-     var narratorsLabel: UILabel!
-     var cardView: UIView!
-     var stackView: UIStackView!
+    var bookCoverImageView: UIImageView!
+    var bookTitleLabel: UILabel!
+    var authorsLabel: UILabel!
+    var narratorsLabel: UILabel!
+    var cardView: UIView!
+    var stackView: UIStackView!
     
+    struct CardView {
+        
+        static let cornerRadius: CGFloat = 5.0
+        static let shadowColor = UIColor.gray.cgColor
+        static let shadowRadius: CGFloat = 12.0
+        static let shadowOpacity: Float = 0.7
+    }
+    
+    let numberOfLinesForLabels = 2
     
     var book: Book? = nil {
         didSet {
@@ -46,8 +55,8 @@ class BookTableViewCell: UITableViewCell, CellReusable {
                 let narratorsString = narratorsNames.joined(separator: ", ")
                 narratorsLabel.text = "with \(narratorsString)"
             }
-            if let urlToImage = book.cover?.url {
-                bookCoverImageView.downloaded(from: urlToImage, contentMode: .scaleAspectFill)
+            if let pathToImage = book.cover?.url {
+                bookCoverImageView.download(from: pathToImage, contentMode: .scaleAspectFill)
             }
             
         }
@@ -59,43 +68,61 @@ class BookTableViewCell: UITableViewCell, CellReusable {
         
         selectionStyle = .none
         
-        cardView =  UIView()
-        cardView.layer.cornerRadius = 5.0
-        cardView.layer.shadowColor = UIColor.gray.cgColor
-        cardView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        cardView.layer.shadowRadius = 12.0
-        cardView.layer.shadowOpacity = 0.7
-        cardView.backgroundColor = .red
-        addSubview(cardView)
+        setupCardView()
         
+        setupBookCoverImageView()
         
+        setupLabels()
         
-        bookCoverImageView = UIImageView(image: #imageLiteral(resourceName: "placeholder"))
-        cardView.addSubview(bookCoverImageView)
-        bookCoverImageView.roundCorners(corners: [.allCorners], radius: 5.0)
+        setupStackView()
         
-        bookTitleLabel = UILabel()
-        bookTitleLabel.font = UIFont(name: bookTitleLabel.font.fontName, size:15)
+        setupConstraints()
         
-        bookTitleLabel.numberOfLines = 2
-        
-        authorsLabel = UILabel()
-        authorsLabel.numberOfLines = 2
-        
-        narratorsLabel = UILabel()
-        narratorsLabel.numberOfLines = 2
-        
+    }
+    
+    func setupStackView() {
         
         stackView = UIStackView(arrangedSubviews: [bookTitleLabel,authorsLabel,narratorsLabel])
         stackView.axis = .vertical
         stackView.alignment = .leading
         stackView.spacing = 0
         cardView.addSubview(stackView)
-        setupConstrain()
-        
     }
     
-    func setupConstrain() {
+    func setupBookCoverImageView() {
+        
+        bookCoverImageView = UIImageView(image: #imageLiteral(resourceName: "placeholder"))
+        cardView.addSubview(bookCoverImageView)
+        bookCoverImageView.roundCorners(corners: [.allCorners], radius: 5.0)
+    }
+    
+    func setupCardView() {
+        
+        cardView =  UIView()
+        cardView.layer.cornerRadius = CardView.cornerRadius
+        cardView.layer.shadowColor = CardView.shadowColor
+        cardView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        cardView.layer.shadowRadius = CardView.shadowRadius
+        cardView.layer.shadowOpacity = CardView.shadowOpacity
+        cardView.backgroundColor = .red
+        addSubview(cardView)
+    }
+    
+    func setupLabels() {
+        
+        bookTitleLabel = UILabel()
+        bookTitleLabel.font = UIFont(name: bookTitleLabel.font.fontName, size:15)
+        
+        bookTitleLabel.numberOfLines = numberOfLinesForLabels
+        
+        authorsLabel = UILabel()
+        authorsLabel.numberOfLines = numberOfLinesForLabels
+        
+        narratorsLabel = UILabel()
+        narratorsLabel.numberOfLines = numberOfLinesForLabels
+    }
+    
+    func setupConstraints() {
         
         cardView.snp.makeConstraints { (make) -> Void in
             make.edges.equalTo(self).inset(8)

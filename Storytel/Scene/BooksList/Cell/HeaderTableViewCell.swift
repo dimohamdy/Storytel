@@ -22,10 +22,10 @@ class HeaderTableViewCell: UITableViewCell, CellReusable {
         queryLabel.numberOfLines = 1
         addSubview(queryLabel)
         
-        setupConstrain()
+        setupConstraints()
     }
     
-    private func setupConstrain() {
+    private func setupConstraints() {
         queryLabel.snp.makeConstraints { (make) -> Void in
             make.centerY.equalTo(self)
             make.centerX.equalTo(self)
