@@ -11,33 +11,33 @@ import SkeletonView
 
 class BooksTableViewDataSource: NSObject, UITableViewDelegate, SkeletonTableViewDataSource {
     var itemsForTable: [ItemTableViewCellType]!
-    var viewModel:BooksListViewModel!
-    
+    var viewModel: BooksListViewModel!
+
     struct Constant {
         static let heightOfBookCell: CGFloat = 120
         static let heightOfHeaderCell: CGFloat = 100
         static let heightOfSkeltonCell: CGFloat = 120
 
     }
-    
-    init(viewModel:BooksListViewModel,itemsForTable: [ItemTableViewCellType]) {
+
+    init(viewModel: BooksListViewModel, itemsForTable: [ItemTableViewCellType]) {
         self.itemsForTable = itemsForTable
         self.viewModel = viewModel
     }
-    
+
     // MARK: - Table view data source
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard !itemsForTable.isEmpty else {
             return 10
         }
         return itemsForTable.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard !itemsForTable.isEmpty else {
             return SkeltonTableViewCell()
@@ -62,7 +62,7 @@ class BooksTableViewDataSource: NSObject, UITableViewDelegate, SkeletonTableView
             return UITableViewCell.emptyCell(message: "No books found")
         }
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard !itemsForTable.isEmpty else {
             return Constant.heightOfSkeltonCell
@@ -75,19 +75,20 @@ class BooksTableViewDataSource: NSObject, UITableViewDelegate, SkeletonTableView
             return Constant.heightOfHeaderCell
         case .error, .empty:
             return tableView.frame.size.height
-            
+
         }
-        
+
     }
-    
+
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
         return SkeltonTableViewCell.identifier
     }
-    
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if tableView.isLast(for: indexPath) ,let _ =  cell as? BookTableViewCell {
+        let bookTableViewCell =  cell as? BookTableViewCell
+        if tableView.isLast(for: indexPath), bookTableViewCell != nil {
             viewModel.loadMoreData(indexPath)
         }
     }
-    
+
 }

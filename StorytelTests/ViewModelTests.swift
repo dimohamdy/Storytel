@@ -66,12 +66,12 @@ class ViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 5)
 
     }
-    
+
     func testHeader() {
         let expectation = XCTestExpectation(description: #function)
-        
+
         // Arrange: Mock Data from API
-        
+
         let session = URLSessionMock()
         let manager = APIClient(session: session)
         // Create data and tell the session to always return it
@@ -95,7 +95,7 @@ class ViewModelTests: XCTestCase {
             }
         }
         wait(for: [expectation], timeout: 5)
-        
+
     }
 
 }

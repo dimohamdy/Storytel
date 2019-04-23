@@ -9,20 +9,19 @@ import Foundation
 
 struct Feed<T: Decodable>: Decodable {
 
-	let items : [T]?
-	let nextPage : String?
-	let query : String?
-	let totalCount : Int?
-
+	let items: [T]?
+	let nextPage: String?
+	let query: String?
+	let totalCount: Int?
 
 	enum CodingKeys: String, CodingKey {
-		case filter = "filter"
-		case items = "items"
-		case nextPage = "nextPage"
-		case query = "query"
-		case totalCount = "totalCount"
+		case filter
+		case items
+		case nextPage
+		case query
+		case totalCount
 	}
-    
+
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		items = try values.decodeIfPresent([T].self, forKey: .items)
@@ -30,6 +29,5 @@ struct Feed<T: Decodable>: Decodable {
 		query = try values.decodeIfPresent(String.self, forKey: .query)
 		totalCount = try values.decodeIfPresent(Int.self, forKey: .totalCount)
 	}
-
 
 }

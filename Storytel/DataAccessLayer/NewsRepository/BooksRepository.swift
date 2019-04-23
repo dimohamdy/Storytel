@@ -9,6 +9,6 @@
 import Foundation
 
 protocol BooksRepository {
-    
+
     func books(for query: String, page: Int?, completion: @escaping (Result<Feed<Book>, StorytelError>) -> Void)
 }

@@ -7,21 +7,20 @@
 
 import Foundation
 
-struct Publisher : Codable {
+struct Publisher: Codable {
 
-	let id : String?
-	let name : String?
-	let slug : String?
-	let type : String?
-
+	let id: String?
+	let name: String?
+	let slug: String?
+	let type: String?
 
 	enum CodingKeys: String, CodingKey {
-		case id = "id"
-		case name = "name"
-		case slug = "slug"
-		case type = "type"
+		case id
+		case name
+		case slug
+		case type
 	}
-    
+
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		id = try values.decodeIfPresent(String.self, forKey: .id)
@@ -29,6 +28,5 @@ struct Publisher : Codable {
 		slug = try values.decodeIfPresent(String.self, forKey: .slug)
 		type = try values.decodeIfPresent(String.self, forKey: .type)
 	}
-
 
 }

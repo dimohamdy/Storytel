@@ -21,12 +21,11 @@ class BookTableViewCellTests: XCTestCase {
         let navigationController = MockNavigationController(rootViewController: booksListViewController)
         UIApplication.shared.keyWindow?.rootViewController = navigationController
     }
-    
+
     func testUI() {
         XCTAssertNotNil(booksListViewController.booksTableView, "booksTableView added to view")
     }
 
-    
     func testUIForCell() {
         if let cell = booksListViewController.booksTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? BookTableViewCell {
             XCTAssertNotNil(cell.bookCoverImageView, "bookCoverImageView added to cell")
@@ -38,9 +37,7 @@ class BookTableViewCellTests: XCTestCase {
 
         }
 
-
     }
-
 
     func testPerformanceExample() {
         // This is an example of a performance test case.

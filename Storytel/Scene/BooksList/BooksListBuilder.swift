@@ -10,18 +10,16 @@ import UIKit
 
 struct BooksListBuilder {
 
-    
-    static func viewController(query:String,dataSource: BooksRepository) -> UIViewController {
-        
+    static func viewController(query: String, dataSource: BooksRepository) -> UIViewController {
+
         let viewModel = BooksListViewModel(query: query, booksRepository: dataSource)
         let viewController: BooksListViewController = BooksListViewController(withViewModel: viewModel)
 
         return viewController
     }
 
-    
-    static func navigationController(query:String,dataSource: BooksRepository) -> UINavigationController {
-        
+    static func navigationController(query: String, dataSource: BooksRepository) -> UINavigationController {
+
         return UINavigationController(rootViewController: BooksListBuilder.viewController(query: query, dataSource: dataSource))
     }
 }

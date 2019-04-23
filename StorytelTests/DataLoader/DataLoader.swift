@@ -9,7 +9,7 @@
 import Foundation
 
 func getData() -> Data? {
-    
+
     guard let path = Bundle.main.path(forResource: "data", ofType: "json") else {
         return nil
     }

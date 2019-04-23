@@ -10,24 +10,24 @@ import Foundation
 @testable import Storytel
 
 extension BooksListViewController {
-    
+
     static func setUpViewControllers() -> BooksListViewController {
-        
+
         // Arrange: setup ViewController with data source
         let booksListViewController = BooksListBuilder.viewController(query: "Harry", dataSource: WebBooksRepository()) as? BooksListViewController
-        
+
         // Arrange: setup ViewModel With Mocked Data
         let viewModel = getViewModelWithMockData()
-        
+
         booksListViewController?.viewModel = viewModel
         booksListViewController?.viewModel.delegate =  booksListViewController
-        
+
         booksListViewController?.loadView()
         booksListViewController?.viewDidLoad()
-        
+
         return booksListViewController!
     }
-    
+
     static func getViewModelWithMockData() -> BooksListViewModel {
         let session = URLSessionMock()
         let manager = APIClient(session: session)
@@ -37,4 +37,3 @@ extension BooksListViewController {
         return BooksListViewModel(query: "Harry", booksRepository: webBooksRepository)
     }
 }
-

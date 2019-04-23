@@ -30,7 +30,7 @@ class APIClient {
         self.session = session
     }
     func loadData<T: Decodable>(from url: URL,
-                                completion: @escaping (Result<T,StorytelError>) -> Void) {
+                                completion: @escaping (Result<T, StorytelError>) -> Void) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
         session.loadData(from: url) { data, _ in
@@ -38,7 +38,7 @@ class APIClient {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
             do {
-                
+
                 guard let data = data else {
                     completion(.failure(.noResults))
                     return

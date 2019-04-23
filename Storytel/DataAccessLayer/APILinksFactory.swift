@@ -9,12 +9,12 @@
 import Foundation
 
 struct APILinksFactory {
-    
+
     private static let baseURL = "https://api.storytel.net/"
-    
+
     enum API: String {
         case search = "search?query="
-        
+
         var path: String {
             switch self {
             case .search:
@@ -23,4 +23,3 @@ struct APILinksFactory {
         }
     }
 }
-

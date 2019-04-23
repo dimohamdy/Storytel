@@ -11,7 +11,7 @@ import XCTest
 
 class WebBooksRepositoryTests: XCTestCase {
     var webBooksRepository: WebBooksRepository!
-    
+
     override func setUp() {
         // Arrange: setup ViewModel
         webBooksRepository = WebBooksRepository()
@@ -22,7 +22,7 @@ class WebBooksRepositoryTests: XCTestCase {
         webBooksRepository.books(for: "Harry", page: nil) { result in
                 switch result {
                 case .success(let data):
-                    guard let books = data.items, books.count > 0 else {
+                    guard let books = data.items, !books.isEmpty else {
                         return
                     }
                     // Assert: Verify it's have a data.
@@ -31,7 +31,7 @@ class WebBooksRepositoryTests: XCTestCase {
                 default:
                     XCTFail("Can't get Data")
                 }
-                
+
         }
     }
 }

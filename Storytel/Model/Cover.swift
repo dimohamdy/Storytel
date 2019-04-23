@@ -7,25 +7,23 @@
 
 import Foundation
 
-struct Cover : Codable {
+struct Cover: Codable {
 
-	let height : Int?
-	let url : String?
-	let width : Int?
-
+	let height: Int?
+	let url: String?
+	let width: Int?
 
 	enum CodingKeys: String, CodingKey {
-		case height = "height"
-		case url = "url"
-		case width = "width"
+		case height
+		case url
+		case width
 	}
-    
+
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		height = try values.decodeIfPresent(Int.self, forKey: .height)
 		url = try values.decodeIfPresent(String.self, forKey: .url)
 		width = try values.decodeIfPresent(Int.self, forKey: .width)
 	}
-
 
 }

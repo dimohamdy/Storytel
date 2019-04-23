@@ -8,7 +8,6 @@ target 'Storytel' do
   pod 'SnapKit', '~> 4.0.0'
   pod 'Kingfisher' , '~> 5.3.0'
   pod 'SkeletonView', '1.4.2'
-
   
   # Pods for Storytel
 

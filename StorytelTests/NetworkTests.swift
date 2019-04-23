@@ -10,7 +10,6 @@ import XCTest
 @testable import Storytel
 
 class NetworkTests: XCTestCase {
-    
 
     func testGetItems() {
         // Setup our objects
@@ -22,18 +21,18 @@ class NetworkTests: XCTestCase {
         let url = URL(fileURLWithPath: "url")
         // Perform the request and verify the result
         manager.loadData(from: url) { (result: Result<Feed<Book>>) in
-            
+
             switch result {
             case .success(let data):
-                guard let data = data,let books = data.items else {
+                guard let data = data, let books = data.items else {
                     XCTFail("Can't get Data")
                     return
                 }
                 XCTAssertGreaterThan(books.count, 0)
             default:
-                XCTFail("Can't get Data")                
+                XCTFail("Can't get Data")
             }
         }
     }
-        
+
 }

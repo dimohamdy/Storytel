@@ -16,7 +16,7 @@ extension UITableViewCell {
         cell.textLabel?.text = message
         cell.textLabel?.font = UIFont.systemFont(ofSize: 20.0)
         cell.textLabel?.textAlignment = .center
-        
+
         return cell
     }
 

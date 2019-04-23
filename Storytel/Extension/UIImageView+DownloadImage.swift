@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 extension UIImageView {
-    
+
     func download(from path: String, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
         guard let url = URL(string: path) else { return }
         self.kf.indicatorType = .activity

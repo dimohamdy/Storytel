@@ -7,27 +7,26 @@
 
 import Foundation
 
-struct Book : Codable {
+struct Book: Codable {
 
-	let authors : [Author]?
-	let cover : Cover?
-	let id : String?
-	let narrators : [Author]?
-	let originalTitle : String?
-	let publishers : [Publisher]?
-	let title : String?
-
+	let authors: [Author]?
+	let cover: Cover?
+	let id: String?
+	let narrators: [Author]?
+	let originalTitle: String?
+	let publishers: [Publisher]?
+	let title: String?
 
 	enum CodingKeys: String, CodingKey {
-		case authors = "authors"
+		case authors
 		case cover
-		case id = "id"
-		case narrators = "narrators"
-		case originalTitle = "originalTitle"
-		case publishers = "publishers"
-		case title = "title"
+		case id
+		case narrators
+		case originalTitle
+		case publishers
+		case title
 	}
-    
+
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		authors = try values.decodeIfPresent([Author].self, forKey: .authors)
@@ -38,6 +37,5 @@ struct Book : Codable {
 		publishers = try values.decodeIfPresent([Publisher].self, forKey: .publishers)
 		title = try values.decodeIfPresent(String.self, forKey: .title)
 	}
-
 
 }

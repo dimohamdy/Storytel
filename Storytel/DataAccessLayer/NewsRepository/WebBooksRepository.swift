@@ -9,22 +9,22 @@
 import Foundation
 
 final class WebBooksRepository: BooksRepository {
-    
+
     let client: APIClient!
     init(client: APIClient = APIClient()) {
         self.client =  client
     }
-    
-    func books(for query:String,page:Int?,completion: @escaping (Result<Feed<Book>,StorytelError>) -> Void ) {
-        
+
+    func books(for query: String, page: Int?, completion: @escaping (Result<Feed<Book>, StorytelError>) -> Void ) {
+
         var pageParam = ""
         if let page = page {
             pageParam = "&page=\(page)"
         }
-        
+
         guard let url = URL(string: "\(APILinksFactory.API.search.path)\(query)\(pageParam)") else { return }
         print(url.absoluteString)
-        client.loadData(from: url) { (result: Result<Feed<Book>,StorytelError>) in
+        client.loadData(from: url) { (result: Result<Feed<Book>, StorytelError>) in
             switch result {
             case .success(let data):
                 completion(.success(data))
@@ -32,10 +32,9 @@ final class WebBooksRepository: BooksRepository {
                 completion(.failure(error))
             }
         }
-        
+
     }
 }
-
 
 enum StorytelError: Error {
     case failedConnection
