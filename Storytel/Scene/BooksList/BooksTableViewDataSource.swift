@@ -60,8 +60,6 @@ class BooksTableViewDataSource: NSObject, UITableViewDelegate, SkeletonTableView
             return UITableViewCell.emptyCell(message: message)
         case .empty:
             return UITableViewCell.emptyCell(message: "No books found")
-        default:
-            return SkeltonTableViewCell()
         }
     }
     
