@@ -28,7 +28,7 @@ class BooksListViewControllerTests: XCTestCase {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             // Assert: Verify table have updated with data.
             let numberOfCellInFirstSection = self.booksListViewController!.booksTableView.numberOfRows(inSection: 0)
-            XCTAssertEqual(numberOfCellInFirstSection, self.self.booksListViewController.viewModel.itemsForTable.count - 1)
+            XCTAssertEqual(numberOfCellInFirstSection, self.self.booksListViewController.viewModel.itemsForTable.count)
             XCTAssertGreaterThan(numberOfCellInFirstSection, 0)
             expectation.fulfill()
         }

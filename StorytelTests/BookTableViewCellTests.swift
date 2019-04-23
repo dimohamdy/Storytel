@@ -33,17 +33,10 @@ class BookTableViewCellTests: XCTestCase {
             XCTAssertNotNil(cell.authorsLabel, "authorsLabel added to cell")
             XCTAssertNotNil(cell.narratorsLabel, "narratorsLabel added to cell")
             XCTAssertNotNil(cell.cardView, "booksTableView added to cell")
-            XCTAssertNotNil(cell.stackView, "v added to cell")
+            XCTAssertNotNil(cell.stackView, "stackView added to cell")
 
         }
 
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }
