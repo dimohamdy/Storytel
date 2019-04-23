@@ -68,7 +68,7 @@ extension  BooksListViewController: ViewModelDelegate {
                 return
             }
             
-            self.booksTableView.insertRows(at: rows, with: .bottom)
+            self.booksTableView.insertRows(at: rows, with: .fade)
 
         }
     }
