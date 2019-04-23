@@ -113,7 +113,7 @@ class BookTableViewCell: UITableViewCell, CellReusable {
         bookTitleLabel = UILabel()
         bookTitleLabel.font = UIFont(name: bookTitleLabel.font.fontName, size:15)
         
-        bookTitleLabel.numberOfLines = numberOfLinesForLabels
+        bookTitleLabel.numberOfLines = 1
         
         authorsLabel = UILabel()
         authorsLabel.numberOfLines = numberOfLinesForLabels
