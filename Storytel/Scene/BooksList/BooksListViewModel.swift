@@ -55,11 +55,9 @@ class BooksListViewModel {
     
     func loadMoreData(_ index: IndexPath) {
         if canLoadMore == true {
-            canLoadMore = false
-            delegate?.showLoading()
             getData(booksRepository: self.booksRepository, for: self.query)
         }
-
+        
     }
     
     private func getData(for query:String = "harry") {
@@ -84,41 +82,28 @@ extension BooksListViewModel {
             self.delegate?.updateData(itemsForTable: itemsForTable, rows: nil, reloadTable: true)
             return
         }
+        delegate?.showLoading()
+        canLoadMore = false
         
         booksRepository.books(for: query, page: page) { [weak self] result in
+            
             
             guard let self =  self else{
                 return
             }
             
             self.canLoadMore = true
-            
             self.delegate?.hideLoading()
+            
             switch result {
             case .success(let searchResult):
                 
                 guard  let books = searchResult.items, books.count > 0,let nextPage = Int(searchResult.nextPage ?? "0") else {
-                    self.itemsForTable.append(.empty)
-                    self.delegate?.updateData(itemsForTable: self.itemsForTable, rows: nil, reloadTable: true)
+                    self.handleNoBooks()
                     return
                 }
-                
-                var reloadTable: Bool = false
-                if self.itemsForTable.count == 0 {
-                    reloadTable = true
-                }
-                
-                if self.page == nil {
-                    self.itemsForTable.append(.header(headerTitle: query))
-                }
-                
-                let newItems:[ItemTableViewCellType] = self.createItemsForTable(books: books)
+                self.handleNewBooks(books: books)
                 self.page = nextPage
-                
-               let indexs = self.addedIndexs(from: self.itemsForTable.count, to: self.itemsForTable.count + newItems.count)
-                
-                self.itemsForTable.append(contentsOf: newItems)
-                self.delegate?.updateData(itemsForTable: self.itemsForTable, rows: indexs, reloadTable: reloadTable)
                 
             case .failure(let error):
                 self.itemsForTable = [.error(message: error.localizedDescription)]
@@ -127,7 +112,37 @@ extension BooksListViewModel {
         }
     }
     
-    private func addedIndexs(from: Int,to: Int) -> [IndexPath] {
+    private func handleNewBooks(books: [Book]) {
+        
+        //reload table prevent me to reload all table when each page I use insertRows Insted
+        var reloadTable: Bool = false
+        if itemsForTable.count == 0 {
+            reloadTable = true
+        }
+        
+        //only first time add header when page nil
+        if page == nil {
+            itemsForTable.append(.header(headerTitle: query))
+        }
+        
+        let newItems:[ItemTableViewCellType] = createItemsForTable(books: books)
+        
+        let indexs = indexesForNewBooks(from: itemsForTable.count, to: itemsForTable.count + newItems.count)
+        
+        itemsForTable.append(contentsOf: newItems)
+        
+        delegate?.updateData(itemsForTable: itemsForTable, rows: indexs, reloadTable: reloadTable)
+    }
+    
+    private func handleNoBooks() {
+        
+        if  itemsForTable.isEmpty {
+            itemsForTable.append(.empty)
+            delegate?.updateData(itemsForTable: itemsForTable, rows: nil, reloadTable: true)
+        }
+    }
+    
+    private func indexesForNewBooks(from: Int,to: Int) -> [IndexPath] {
         
         let indexsArray = (from ..< to).map { index -> IndexPath in
             return IndexPath(row: index, section: 0)
