@@ -28,11 +28,12 @@ class BooksListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.delegate = self
         setupViews()
         setupLayout()
+        booksTableView.isSkeletonable = true
+        viewModel.delegate = self
+
     }
-    
     
 }
 
@@ -50,7 +51,7 @@ extension  BooksListViewController: ViewModelDelegate {
         }
     }
     
-    func updateData(itemsForTable: [ItemTableViewCellType]) {
+    func updateData(itemsForTable: [ItemTableViewCellType], rows: [IndexPath]?, reloadTable: Bool) {
         
         if tableViewDataSource == nil {
             tableViewDataSource = BooksTableViewDataSource(viewModel: self.viewModel, itemsForTable: itemsForTable)
@@ -61,7 +62,14 @@ extension  BooksListViewController: ViewModelDelegate {
         DispatchQueue.main.async {
             self.booksTableView.dataSource = self.tableViewDataSource
             self.booksTableView.delegate = self.tableViewDataSource
-            self.booksTableView.reloadData()
+            
+            guard let rows = rows,reloadTable == false else {
+                self.booksTableView.reloadData()
+                return
+            }
+            
+            self.booksTableView.insertRows(at: rows, with: .bottom)
+
         }
     }
     
@@ -80,6 +88,8 @@ private extension BooksListViewController {
         booksTableView.register(BookTableViewCell.self, forCellReuseIdentifier: BookTableViewCell.identifier)
         booksTableView.register(HeaderTableViewCell.self, forCellReuseIdentifier: HeaderTableViewCell.identifier)
         booksTableView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.identifier)
+        booksTableView.register(SkeltonTableViewCell.self, forCellReuseIdentifier: SkeltonTableViewCell.identifier)
+        
         
         view.addSubview(booksTableView)
     }

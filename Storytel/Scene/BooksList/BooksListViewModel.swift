@@ -12,11 +12,9 @@ enum ItemTableViewCellType {
     case cellItem(book: Book)
     case error(message: String)
     case empty
-    case loading
-
 }
 protocol ViewModelDelegate: class {
-    func updateData(itemsForTable: [ItemTableViewCellType])
+    func updateData(itemsForTable: [ItemTableViewCellType], rows: [IndexPath]?,reloadTable: Bool)
     func showLoading()
     func hideLoading()
 }
@@ -27,13 +25,13 @@ class BooksListViewModel {
     // output
     weak var delegate: ViewModelDelegate? {
         didSet {
-            guard let delegate = delegate,!itemsForTable.isEmpty else {
+            guard let delegate = delegate else {
                 return
             }
-            delegate.updateData(itemsForTable: itemsForTable)
+            delegate.updateData(itemsForTable: itemsForTable, rows: nil,reloadTable: true)
         }
     }
-
+    
     
     var query: String!
     
@@ -47,18 +45,21 @@ class BooksListViewModel {
         self.booksRepository = booksRepository
         self.query = query
         refreshData()
+        
     }
     
     private func refreshData() {
-        self.itemsForTable.append(.header(headerTitle: query))
+        self.delegate?.updateData(itemsForTable: [], rows: nil, reloadTable: true)
         getData(booksRepository: self.booksRepository, for: query)
     }
     
     func loadMoreData(_ index: IndexPath) {
-            print(index.item)
-            itemsForTable.append(.loading)
+        if canLoadMore == true {
+            canLoadMore = false
             delegate?.showLoading()
             getData(booksRepository: self.booksRepository, for: self.query)
+        }
+
     }
     
     private func getData(for query:String = "harry") {
@@ -77,49 +78,64 @@ extension BooksListViewModel {
     private func getData(booksRepository: BooksRepository,for query:String) {
         self.booksRepository = booksRepository
         self.query = query
-
+        
         guard (booksRepository is WebBooksRepository && Reachability.isConnectedToNetwork() == true) else {
             self.itemsForTable = [.error(message: StorytelError.noInternetConnection.localizedDescription)]
-            self.delegate?.updateData(itemsForTable: itemsForTable)
+            self.delegate?.updateData(itemsForTable: itemsForTable, rows: nil, reloadTable: true)
             return
         }
         
         booksRepository.books(for: query, page: page) { [weak self] result in
+            
             guard let self =  self else{
                 return
             }
+            
+            self.canLoadMore = true
+            
+            self.delegate?.hideLoading()
             switch result {
             case .success(let searchResult):
-
+                
                 guard  let books = searchResult.items, books.count > 0,let nextPage = Int(searchResult.nextPage ?? "0") else {
                     self.itemsForTable.append(.empty)
-                    self.delegate?.updateData(itemsForTable: self.itemsForTable )
+                    self.delegate?.updateData(itemsForTable: self.itemsForTable, rows: nil, reloadTable: true)
                     return
                 }
-
+                
+                var reloadTable: Bool = false
+                if self.itemsForTable.count == 0 {
+                    reloadTable = true
+                }
+                
+                if self.page == nil {
+                    self.itemsForTable.append(.header(headerTitle: query))
+                }
+                
                 let newItems:[ItemTableViewCellType] = self.createItemsForTable(books: books)
                 self.page = nextPage
-                if let lastItem = self.itemsForTable.last{
-                    switch lastItem {
-                    case .loading:
-                        self.itemsForTable.removeLast()
-                        self.delegate?.hideLoading()
-                    default:
-                        break
-                    }
-                }
-
+                
+               let indexs = self.addedIndexs(from: self.itemsForTable.count, to: self.itemsForTable.count + newItems.count)
                 
                 self.itemsForTable.append(contentsOf: newItems)
-                self.delegate?.updateData(itemsForTable: self.itemsForTable )
+                self.delegate?.updateData(itemsForTable: self.itemsForTable, rows: indexs, reloadTable: reloadTable)
                 
             case .failure(let error):
                 self.itemsForTable = [.error(message: error.localizedDescription)]
-                self.delegate?.updateData(itemsForTable: self.itemsForTable )
+                self.delegate?.updateData(itemsForTable: self.itemsForTable, rows: nil, reloadTable: true)
             }
         }
     }
-
+    
+    private func addedIndexs(from: Int,to: Int) -> [IndexPath] {
+        
+        let indexsArray = (from ..< to).map { index -> IndexPath in
+            return IndexPath(row: index, section: 0)
+        }
+        
+        return indexsArray
+    }
+    
     private func createItemsForTable(books: [Book]) -> [ItemTableViewCellType] {
         var itemsForTable: [ItemTableViewCellType] = []
         

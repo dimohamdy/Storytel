@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E5153F7F038CDD618D9D0E2 /* Pods_Storytel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AAD2F8148F30359FC5A3CD /* Pods_Storytel.framework */; };
+		3D43B374226F3BA90020F121 /* SkeletonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D43B373226F3BA90020F121 /* SkeletonTableViewCell.swift */; };
 		3D67EE712267F8F00049B009 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67EE692267F8F00049B009 /* Publisher.swift */; };
 		3D67EE722267F8F00049B009 /* Cover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67EE6A2267F8F00049B009 /* Cover.swift */; };
 		3D67EE732267F8F00049B009 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67EE6B2267F8F00049B009 /* Book.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		309F5AD643B657CC652CAEFC /* Pods-Storytel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storytel.release.xcconfig"; path = "Target Support Files/Pods-Storytel/Pods-Storytel.release.xcconfig"; sourceTree = "<group>"; };
+		3D43B373226F3BA90020F121 /* SkeletonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTableViewCell.swift; sourceTree = "<group>"; };
 		3D67EE692267F8F00049B009 /* Publisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		3D67EE6A2267F8F00049B009 /* Cover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cover.swift; sourceTree = "<group>"; };
 		3D67EE6B2267F8F00049B009 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				3D67EE832268B47B0049B009 /* LoadingTableViewCell.swift */,
 				3D67EE842268B47B0049B009 /* BookTableViewCell.swift */,
+				3D43B373226F3BA90020F121 /* SkeletonTableViewCell.swift */,
 				3D67EE852268B47B0049B009 /* HeaderTableViewCell.swift */,
 			);
 			path = Cell;
@@ -581,6 +584,7 @@
 				3D75ABEE2266C6D000F578FF /* Reachability.swift in Sources */,
 				3D75ABB32266C53600F578FF /* AppDelegate.swift in Sources */,
 				3DC626CC226AB12A00B8F67E /* UIView+RoundCorners .swift in Sources */,
+				3D43B374226F3BA90020F121 /* SkeletonTableViewCell.swift in Sources */,
 				3D7AA8FB226E446B00B05498 /* APILinksFactory.swift in Sources */,
 				3D67EE872268B47B0049B009 /* BooksListViewModel.swift in Sources */,
 				3D67EE762267F8F00049B009 /* Author.swift in Sources */,

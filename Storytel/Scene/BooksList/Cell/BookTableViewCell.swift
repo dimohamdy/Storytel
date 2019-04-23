@@ -104,7 +104,7 @@ class BookTableViewCell: UITableViewCell, CellReusable {
         cardView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         cardView.layer.shadowRadius = CardView.shadowRadius
         cardView.layer.shadowOpacity = CardView.shadowOpacity
-        cardView.backgroundColor = .red
+        cardView.backgroundColor = .carrot
         addSubview(cardView)
     }
     
@@ -131,8 +131,8 @@ class BookTableViewCell: UITableViewCell, CellReusable {
         }
         
         bookCoverImageView.snp.makeConstraints { (make) -> Void in
+            make.height.equalTo(cardView.snp.height).multipliedBy(0.8)
             make.height.equalTo(bookCoverImageView.snp.width)
-            make.height.equalTo(cardView.snp.height).multipliedBy(0.6)
             make.centerY.equalTo(cardView)
             make.left.equalTo(cardView).offset(8)
         }
